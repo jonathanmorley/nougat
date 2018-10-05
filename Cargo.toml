@@ -2,6 +2,9 @@
 name = "nougat"
 version = "0.1.0"
 authors = ["Morley, Jonathan <morley.jonathan@gmail.com>"]
+description = "Nuget Repository client"
+documentation = "https://jonathanmorley.github.io/nougat"
+repository = "https://github.com/jonathanmorley/nougat"
 
 [dependencies]
 clap = "2"

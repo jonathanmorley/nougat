@@ -34,7 +34,7 @@ impl Client {
     pub fn packages(&self, filter: Option<&str>) -> Result<Vec<Package>, Error> {
         let mut results = Vec::new();
 
-        let page_size = 20_000u64;
+        let page_size = 15_000u64;
         let mut skip = 0u64;
 
         loop {

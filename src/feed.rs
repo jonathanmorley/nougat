@@ -258,7 +258,7 @@ r##"<?xml version="1.0" encoding="UTF-8"?>
       <link rel="edit-media" title="Package" href="Packages(Id='Antlr4.Runtime',Version='4.5.3-rc1')/$value" />
       <link rel="edit" title="Package" href="Packages(Id='Antlr4.Runtime',Version='4.5.3-rc1')" />
       <category term="NuGet.Server.DataServices.Package" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
-      <content type="application/zip" src="http://proget.core.cvent.org/nuget/nuget-all/package/Antlr4.Runtime/4.5.3-rc1" />
+      <content type="application/zip" src="http://proget/nuget/Default/package/Antlr4.Runtime/4.5.3-rc1" />
       <m:properties>
          <d:Version>4.5.3-rc1</d:Version>
          <d:Title>ANTLR 4 Runtime</d:Title>

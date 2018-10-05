@@ -1,0 +1,58 @@
+sudo: required
+language: rust
+cache: cargo
+
+addons:
+  apt:
+    packages:
+      - libcurl4-openssl-dev # cargo-travis
+      - libelf-dev # cargo-travis
+      - libdw-dev # cargo-travis
+      - binutils-dev # cargo-travis
+      - cmake # cargo-travis, cargo-update, semantic-rs
+      - libssl-dev # semantic-rs
+      - pkg-config # semantic-rs
+      - zlib1g-dev # semantic-rs
+    sources:
+      - kalakris-cmake
+
+# run builds for all the trains (and more)
+rust:
+  - nightly
+  - beta
+  # check it compiles on the latest stable compiler
+  - stable
+  # and the first stable one (this should be bumped as the minimum
+  # Rust version required changes)
+  - 1.29.1
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - rust: nightly
+
+before_script:
+  - rustup component add rustfmt-preview
+  - rustup component add clippy-preview
+  - cargo install cargo-update || echo "cargo-update already installed"
+  - cargo install cargo-travis || echo "cargo-travis already installed"
+  - cargo install-update -a # update outdated cached binaries
+
+script:
+  - cargo fmt -- --check
+  - cargo clippy -- -D warnings
+  - cargo build --verbose
+  - cargo test --verbose
+  - cargo doc --verbose
+
+after_success:
+  # measure code coverage and upload to coveralls.io
+  - cargo coveralls
+  # upload documentation to github.io (gh-pages branch)
+  - cargo doc-upload
+
+branches:
+  only:
+    - staging # bors r+
+    - trying  # bors try
+    - master

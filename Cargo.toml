@@ -18,7 +18,7 @@ tempdir = "0.3"
 serde-xml-rs = { git = "https://github.com/RReverser/serde-xml-rs" }
 failure = "0.1"
 structopt = "0.2"
-stderrlog = "0.4"
+stderrlog = "0.6"
 
 # So that deserialization supports Urls
 [dependencies.url]

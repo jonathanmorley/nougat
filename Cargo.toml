@@ -7,7 +7,7 @@ documentation = "https://jonathanmorley.github.io/nougat"
 repository = "https://github.com/jonathanmorley/nougat"
 
 [dependencies]
-clap = "2"
+clap = "4"
 hyper = "0.10"
 log = "0.4"
 reqwest = "0.9"

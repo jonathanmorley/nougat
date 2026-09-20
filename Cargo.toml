@@ -8,7 +8,7 @@ repository = "https://github.com/jonathanmorley/nougat"
 
 [dependencies]
 clap = "2"
-hyper = "0.10"
+hyper = "0.14"
 log = "0.4"
 reqwest = "0.9"
 serde = "1"
